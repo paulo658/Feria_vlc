@@ -1,0 +1,22 @@
+<mjml>
+  <mj-head>
+    <mj-title>Mi plantilla MJML</mj-title>
+    <mj-preview>Previsualización del correo</mj-preview>
+  </mj-head>
+  <mj-body>
+    <mj-section>
+      <mj-column>
+        <mj-image src="./Imagenes/imag1.jpg" alt="Imagen superior" />
+        <mj-text font-size="22px" color="#222" font-family="Arial">
+          ¡Bienvenido a tu plantilla MJML!
+        </mj-text>
+        <mj-divider border-color="#cccccc" />
+        <mj-text>
+          Aquí puedes empezar a crear tu contenido.<br/>
+          Agrega más secciones, columnas, imágenes, botones, etc.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <!-- Agrega más <mj-section> aquí según lo necesites -->
+  </mj-body>
+</mjml>
