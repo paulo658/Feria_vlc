@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: mysql-socio
+    environment:
+      MYSQL_ROOT_PASSWORD: tu_contraseña
+      MYSQL_DATABASE: basededatos
+      MYSQL_USER: usuario
+      MYSQL_PASSWORD: clave_usuario
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./data/db/mysql:/var/lib/mysql
+    restart: unless-stopped
+    networks:
+      - feria_net
+
+networks:
+  feria_net:
+    external: true

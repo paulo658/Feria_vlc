@@ -20,7 +20,7 @@
           CONSIGUE TU ENTRADA AQUÍ !!
         </mj-button>
         <mj-text font-size="18px" font-family="Arial" color="#222" font-weight="bold" padding-top="24px">
-          ¡Hola, [Nombre]!
+          ¡Hola, {{nombre}}!
         </mj-text>
         <mj-text font-size="16px" font-family="Arial" color="#222">
           ¿Quieres conseguir entradas <b>GRATIS</b> para el próximo <b>Salón del Cómic de València</b>?<br/><br/>
@@ -38,7 +38,7 @@
           · Encuentros con autores: Tendrás la oportunidad de conocer y escuchar a figuras destacadas como <a href="https://www.saloncomicvalencia.com/invitado/eusebio-nsue-nsue/" style="color:#1976d2;">Eusebio Nsue Nsue</a>, <a href="https://www.saloncomicvalencia.com/invitado/marcelo-dsalete/" style="color:#1976d2;">Marcelo D’Salete</a> y <a href="https://www.saloncomicvalencia.com/invitado/emil-ferris/" style="color:#1976d2;">Emil Ferris</a> en charlas y firmas.<br/><br/>
           Todo esto y mucho más en el Salón del Cómic en Feria de Valencia.
         </mj-text>
-        <mj-button href="https://forms.office.com/e/ccpS5z31ve?origin=lprLink" background-color="#388e3c" color="#fff" font-size="22px" font-family="Arial" font-weight="bold" border-radius="2px" padding="10px 0" width="100%">
+        <mj-button href="https://docs.google.com/forms/d/e/1FAIpQLSc3G-dQ7-QgxDp0OjJtqOfGMb4y9wTyrSNQ_IDUQwWHfnHeYA/viewform" background-color="#388e3c" color="#fff" font-size="22px" font-family="Arial" font-weight="bold" border-radius="2px" padding="10px 0" width="100%">
           PULSE PARA EMPEZAR LA ENCUESTA !!
         </mj-button>
       </mj-column>

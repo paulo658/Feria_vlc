@@ -63,3 +63,75 @@ Sirven de apoyo visual sin distraer del CTA principal.
     Footer (pie de página):
 
 Espacio reservado para información legal, redes sociales y enlace de baja, cumpliendo con los estándares de email marketing (RGPD/GDPR).
+
+---
+# 3. BASE DE DATOS
+
+![](./Imagenes/E-R%20_SUPUESTO1.png)
+ENTIDADES (Tablas principales)
+1. 🧍‍♂️ Usuarios
+Clave primaria: COD_USUARIOS
+
+Atributos: Nombre, EDAD, MAIL (único), IDIOMA
+
+2. 📝 ENCUESTA
+Clave primaria: ID_ENCUESTA
+
+Atributos: NOMBRE_ENCUESTA, DESCRIPCION
+
+3. 🎯 ACTIVIDADES
+Clave primaria: ID_ACTIVIDAD
+
+Atributos: NOMBRE_ACTIVIDAD, FECHA_INICIO, FECHA_FIN, SPONSORS
+
+4. 👤 INVITADO
+Clave primaria: COD_INVITADOS
+
+Atributos: NOMBRE, APELLIDO, PAIS, DESCRIPCION
+
+🔁 RELACIONES (Tablas intermedias)
+5. 👔 SUBSCRITO
+Une: USUARIOS ↔ ACTIVIDADES
+
+Atributos: COD_USUARIOS, ID_ACTIVIDAD
+
+Tipo de relación: Muchos a muchos (n:n)
+
+6. ✅ HACEN
+Une: USER ↔ ENCUESTA
+
+Atributos: COD_USUARIOS, ID_ENCUESTA
+
+Tipo de relación: Muchos a muchos (n:n)
+
+7. 🎤 TRAEN
+Une: ACTIVIDADES ↔ INVITADO
+
+Atributos: ID_ACTIVIDAD, COD_INVITADO
+
+Tipo de relación: Muchos a muchos (n:n)
+
+🎓 DIAGRAMA E-R CONCEPTUAL (Descripción textual)
+Un USUARIO puede:
+
+Participar en muchas ACTIVIDADES (por SUBSCRITO)
+
+Contestar muchas ENCUESTAS (por HACEN)
+
+Una ENCUESTA puede:
+
+Ser contestada por varios Usuarios
+
+Una ACTIVIDAD puede:
+
+Tener muchos USUARIOS asignados (por Subscritos)
+
+Tener muchos INVITADO (por TRAEN)
+
+Un INVITADO puede:
+
+Participar en varias ACTIVIDADES
+
+# Diagrama base de datos
+![](./Imagenes/Diagrama.png)
+
