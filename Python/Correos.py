@@ -97,7 +97,7 @@ errores = 0
 
 for row in cursor:
     nombre = row.get('nombre') or row.get('Nombre')  # por si acaso
-    email = row.get('email') or row.get('Email')
+    email = row.get('email') or row.get('Mail')
     if not nombre or not email:
         print(f"Datos incompletos para registro: {row}")
         continue
