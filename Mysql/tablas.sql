@@ -1,4 +1,12 @@
 USE basededatos;
+--Tabla usuarios
+CREATE TABLE IF NOT EXISTS usuarios(
+Cod_User INT PRIMARY KEY AUTO_INCREMENT,
+Nombre Varchar(45)NOT NULL,
+Edad INT NOT NULL,
+Mail VARCHAR(255) UNIQUE,
+Idioma TEXT
+)
 -- Tabla actividad
 CREATE TABLE IF NOT EXISTS actividad(
 Id_actividad INT PRIMARY KEY AUTO_INCREMENT,
