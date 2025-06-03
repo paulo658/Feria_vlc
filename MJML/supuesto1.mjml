@@ -1,0 +1,72 @@
+<mjml>
+  <mj-head>
+    <mj-title>Salón del Cómic de Valencia</mj-title>
+    <mj-preview>¡Consigue tu entrada GRATIS y participa en la encuesta!</mj-preview>
+    <mj-style inline="inline">
+      @media only screen and (max-width:480px) {
+        .column-mobile {
+          display: block !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body background-color="#f5f5f5">
+    <mj-section background-color="#ffffff" border-radius="16px" padding="24px">
+      <mj-column>
+        <mj-image src="./Imagenes/imag1.jpg" alt="Salón del Cómic de Valencia" padding-bottom="16px" />
+        <mj-button href="https://www.saloncomicvalencia.com" background-color="#388e3c" color="#fff" font-size="22px" font-family="Arial" font-weight="bold" border-radius="2px" padding="10px 0" width="100%">
+          CONSIGUE TU ENTRADA AQUÍ !!
+        </mj-button>
+        <mj-text font-size="18px" font-family="Arial" color="#222" font-weight="bold" padding-top="24px">
+          ¡Hola, {{nombre}}!
+        </mj-text>
+        <mj-text font-size="16px" font-family="Arial" color="#222">
+          ¿Quieres conseguir entradas <b>GRATIS</b> para el próximo <b>Salón del Cómic de València</b>?<br/><br/>
+          Solo tienes que rellenar una breve encuesta y automáticamente entrarás en el sorteo de entradas dobles para disfrutar de uno de los eventos más esperados del año.
+        </mj-text>
+        <mj-text font-size="16px" font-family="Arial" color="#222" font-weight="bold" padding-bottom="8px">
+          Aquí te dejo un pequeño adelanto de lo que te espera:
+        </mj-text>
+        <mj-text font-size="15px" font-family="Arial" color="#222">
+          · Exposiciones temáticas: Disfrutarás de muestras como <a href="https://www.saloncomicvalencia.com/programacion-comic-2025/" style="color:#1976d2;">"Marvel y DC se escriben con Ñ y Fantasy Manga"</a>, que celebrarán el talento español en el cómic y el manga.<br/><br/>
+          · Zona Asia: Vibrarás con actuaciones de <a href="https://www.saloncomicvalencia.com/escenario-principal-2025/" style="color:#1976d2;">K-pop</a>, <a href="https://www.saloncomicvalencia.com/programacion-cosplay-25/" style="color:#1976d2;">concursos de cosplay</a> y la presencia de artistas de manga como <a href="https://www.saloncomicvalencia.com/invitado/ana-oncina/" style="color:#1976d2;">Ana Oncina</a> y <a href="https://www.saloncomicvalencia.com/invitados-zona-asia-2025/" style="color:#1976d2;">jóvenes promesas</a>.<br/><br/>
+          · Joc & Rol: Te sumergirás en el mundo de los <a href="https://www.saloncomicvalencia.com/programacion-juego-y-rol-2025/" style="color:#1976d2;">juegos de mesa</a> y de rol con torneos, demostraciones y una ludoteca gigante para jugar sin parar.<br/><br/>
+          · Artist Alley: Conocerás a más de <a href="https://www.saloncomicvalencia.com/artist-alley-2025/" style="color:#1976d2;">127 artistas</a> que compartirán su arte original y te ofrecerán cómics e ilustraciones únicas.<br/><br/>
+          · Actividades infantiles: Los más peques disfrutarán a lo grande con <a href="https://www.saloncomicvalencia.com/kids-comics/" style="color:#1976d2;">talleres, juegos y cuentacuentos</a> pensados para despertar su creatividad.<br/><br/>
+          · Encuentros con autores: Tendrás la oportunidad de conocer y escuchar a figuras destacadas como <a href="https://www.saloncomicvalencia.com/invitado/eusebio-nsue-nsue/" style="color:#1976d2;">Eusebio Nsue Nsue</a>, <a href="https://www.saloncomicvalencia.com/invitado/marcelo-dsalete/" style="color:#1976d2;">Marcelo D’Salete</a> y <a href="https://www.saloncomicvalencia.com/invitado/emil-ferris/" style="color:#1976d2;">Emil Ferris</a> en charlas y firmas.<br/><br/>
+          Todo esto y mucho más en el Salón del Cómic en Feria de Valencia.
+        </mj-text>
+        <mj-button href="https://docs.google.com/forms/d/e/1FAIpQLSc3G-dQ7-QgxDp0OjJtqOfGMb4y9wTyrSNQ_IDUQwWHfnHeYA/viewform" background-color="#388e3c" color="#fff" font-size="22px" font-family="Arial" font-weight="bold" border-radius="2px" padding="10px 0" width="100%">
+          PULSE PARA EMPEZAR LA ENCUESTA !!
+        </mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section padding="24px 0 0 0" direction="ltr">
+      <mj-column width="50%">
+        <mj-image src="./Imagenes/persona_viendo_cuadros.jpg" alt="Cómics Valencians" />
+      </mj-column>
+      <mj-column width="50%">
+        <mj-image src="./Imagenes/comicValencia.jpg" alt="Exposición de cómics" />
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#f5f5f5" padding="24px 0 0 0">
+      <mj-column>
+        <mj-divider border-color="#cccccc" />
+        <mj-text font-size="14px" color="#222" font-family="Arial" align="center" padding-bottom="8px">
+          Síguenos en redes sociales:
+        </mj-text>
+        <mj-social font-size="15px" icon-size="30px" mode="horizontal" align="center">
+          <mj-social-element name="facebook" href="https://facebook.com/tu_pagina" background-color="#3b5998"></mj-social-element>
+          <mj-social-element name="x" href="https://x.com/saloncomicvlc?lang=es" background-color="black"></mj-social-element>
+          <mj-social-element name="instagram" href="https://www.instagram.com/saloncomicvalencia/" background-color="#e4405f"></mj-social-element>
+          <mj-social-element name="TikTok" href="https://www.tiktok.com/@saloncomicvalencia" background-color="black"></mj-social-element>
+        </mj-social>
+        <mj-text font-size="12px" color="#888" font-family="Arial" align="center" padding-top="16px">
+          © 2025 Salón del Cómic de Valencia · <a href="https://www.saloncomicvalencia.com/legal" style="color:#888;">Aviso legal</a> · <a href="https://www.saloncomicvalencia.com/baja" style="color:#888;">Darse de baja</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

@@ -1,0 +1,7 @@
+mail=TU_EMAIL_AQUI@example.com
+pass=TU_APP_PASSWORD_AQUI
+db_host=TU_HOST_BD_AQUI
+db_user=TU_USUARIO_BD_AQUI
+db_password=TU_CONTRASENA_BD_AQUI
+db_nombre=TU_NOMBRE_BD_AQUI
+db_port=3306  # Cambia si tu BD usa otro puerto
