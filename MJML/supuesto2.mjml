@@ -5,19 +5,26 @@
       <mj-section padding="0px" />
       <mj-text color="#fff" font-size="18px" />
     </mj-attributes>
-    <mj-style>
+    <mj-style inline="inline">
       .motogp-title { font-size: 28px; font-weight: bold; letter-spacing: 1px; }
       .main-bg { background-color: #e53c3c; }
-      .shadow-img { border-radius: 12px; box-shadow: none; }
-      .white-btn { background: #fff; color: #e53c3c; font-weight: bold; border-radius: 8px; padding: 12px 0; font-size: 20px; }
+      .shadow-img { border-radius: 12px; box-shadow: 4px 4px 16px 0 rgba(0,0,0,0.25); }
+      .shadow-box { box-shadow: 4px 4px 16px 0 rgba(0,0,0,0.18); border-radius: 12px; background: #e53c3c; padding: 16px; }
+      @media only screen and (min-width:480px) {
+        .text-left-desktop { text-align: left !important; }
+        .text-right-desktop { text-align: right !important; }
+      }
+      @media only screen and (max-width:480px) {
+        .text-left-desktop, .text-right-desktop { text-align: justify !important; }
+        .shadow-img { width: 90% !important; max-width: 260px !important; }
+      }
     </mj-style>
   </mj-head>
   <mj-body background-color="#e53c3c">
     <!-- Banner superior -->
-    <mj-section background-color="#fff"  padding="24px 0 16px 0" border-radius="16px" text-align="center">
+    <mj-section background-color="#fff" padding="24px 0 16px 0" border-radius="16px" text-align="center">
       <mj-column width="100%">
         <mj-image src="./Imag/cabecera.jpg" alt="2Ruedas Banner" width="420px" padding="0" css-class="shadow-img" />
-        <!-- Puedes reemplazar la URL de la imagen por la tuya propia -->
       </mj-column>
     </mj-section>
 
@@ -28,32 +35,45 @@
           SORTEO ENTRADA MOTOGP !!
         </mj-text>
       </mj-column>
-    </mj-section>border-radius="16px"
+    </mj-section>
 
     <!-- Primer bloque: imagen y texto -->
-    <mj-section css-class="main-bg" padding="12px 0 0 0">
-      <mj-column width="40%">
-        <mj-image src="./Imag/motos.jpg" alt="MotoGP Cheste" width="180px" border-radius="16px" css-class="shadow-img" />
-        <!-- Reemplaza la URL por la imagen real -->
-      </mj-column>
-      <mj-column width="60%">
-        <mj-text align="left" font-size="18px" padding="12px 0 0 0">
-          Sorteo de dos entradas para ver el GP de motociclismo en Cheste.
-        </mj-text>
-      </mj-column>
+    <mj-section
+      css-class="main-bg"
+      padding="12px 0 0 0"
+      background-repeat="no-repeat"
+      background-size="cover"
+    >
+      <mj-group>
+        <mj-column width="40%" vertical-align="middle">
+          <mj-image src="./Imag/motos.jpg" alt="MotoGP Cheste" />
+        </mj-column>
+        <mj-column width="60%" vertical-align="middle">
+          <mj-text css-class="text-left-desktop" font-size="18px" padding="12px 0 12px 0">
+            Sorteo de dos entradas para ver el GP de motociclismo en Cheste.
+          </mj-text>
+        </mj-column>
+      </mj-group>
     </mj-section>
 
     <!-- Segundo bloque: texto y imagen -->
-    <mj-section css-class="main-bg" padding="24px 0 0 0">
-      <mj-column width="60%">
-        <mj-text align="left" font-size="18px" padding="12px 0 0 0">
-          Entre todos los que complementen el formulario de las entradas de la feria antes del 1 de septiembre.
-        </mj-text>
-      </mj-column>
-      <mj-column width="40%">
-        <mj-image src="./Imag/motogp.jpg" alt="MotoGP Carrera" width="180px" border-radius="16px" css-class="shadow-img" />
-        <!-- Reemplaza la URL por la imagen real -->
-      </mj-column>
+    <mj-section
+      css-class="main-bg"
+      padding="24px 0 0 0"
+      background-url="./Imag/fondo.png"
+      background-repeat="no-repeat"
+      background-size="cover"
+    >
+      <mj-group>
+        <mj-column width="60%" vertical-align="middle">
+          <mj-text css-class="text-right-desktop" font-size="18px" padding="12px 0 12px 0">
+            Entre todos los que complementen el formulario de las entradas de la feria antes del 1 de septiembre.
+          </mj-text>
+        </mj-column>
+        <mj-column width="40%" vertical-align="middle">
+          <mj-image src="./Imag/motogp.jpg" alt="MotoGP Carrera" />
+        </mj-column>
+      </mj-group>
     </mj-section>
 
     <!-- Botón/entrada -->
@@ -66,15 +86,15 @@
     </mj-section>
 
     <!-- Redes sociales -->
-    <mj-section css-class="main-bg" padding="32px 0 0 0">
+    <mj-section padding="32px 0 0 0">
       <mj-column>
         <mj-text align="center" font-size="18px" color="#fff" padding-bottom="12px">
           Síguenos en nuestras redes sociales:
         </mj-text>
         <mj-social align="center" color="#e6323e" icon-size="32px" mode="horizontal">
-          <mj-social-element name="facebook" href="https://www.facebook.com/2RuedasFeriaValencia" background-color="#fff"></mj-social-element>
-          <mj-social-element name="instagram" href="https://www.instagram.com/2ruedasferiavalencia/" background-color="#fff"></mj-social-element>
-          <mj-social-element name="twitter" href="https://twitter.com/feriavalencia" background-color="#fff"></mj-social-element>
+          <mj-social-element name="facebook" href="https://www.facebook.com/2RuedasFeriaValencia" background-color="blue"></mj-social-element>
+          <mj-social-element name="instagram" href="https://www.instagram.com/2ruedasferiavalencia/" background-color="#E1306C"></mj-social-element>
+          <mj-social-element name="x" href="https://x.com/feriavalencia" background-color="black"></mj-social-element>
         </mj-social>
       </mj-column>
     </mj-section>

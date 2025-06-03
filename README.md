@@ -14,7 +14,7 @@ Se trata de un segmento diverso que abarca desde nuevos aficionados hasta seguid
 El objetivo principal de esta comunicación es incentivar la participación en una encuesta breve mediante la posibilidad de ganar entradas dobles para el Salón del Cómic de València 2026, promoviendo así la implicación del público y recogiendo información valiosa para mejorar la experiencia del evento.
 
 # · DAFO
-![DAFO y competencia](./Imagenes/dafo.png)
+![DAFO y competencia](./Imagenes/salon_comic/dafo.png)
 
 ---
 # 2. DISEÑO 
@@ -22,7 +22,7 @@ El objetivo principal de esta comunicación es incentivar la participación en u
 Aqui tenemos el primer diseño del correo.
 
 # · Mockup
-![](./Imagenes/mockup.png)
+![](./Imagenes/salon_comic/mockup.png)
 
 # · Elementos visuales utilizados
 
@@ -67,7 +67,7 @@ Espacio reservado para información legal, redes sociales y enlace de baja, cump
 ---
 # 3. BASE DE DATOS
 
-![](./Imagenes/E-R%20_SUPUESTO1.png)
+![](./Imagenes/salon_comic/E-R%20_SUPUESTO1.png)
 ENTIDADES (Tablas principales)
 1. 🧍‍♂️ Usuarios
 Clave primaria: COD_USUARIOS
@@ -133,5 +133,5 @@ Un INVITADO puede:
 Participar en varias ACTIVIDADES
 
 # Diagrama base de datos
-![](./Imagenes/Diagrama.png)
+![](./Imagenes/salon_comic/Diagrama.png)
 
