@@ -1,12 +1,13 @@
+Create database IF NOT EXISTS basededatos;
 USE basededatos;
---Tabla usuarios
+-- Tabla usuarios
 CREATE TABLE IF NOT EXISTS usuarios(
 Cod_User INT PRIMARY KEY AUTO_INCREMENT,
 Nombre Varchar(45)NOT NULL,
 Edad INT NOT NULL,
 Mail VARCHAR(255) UNIQUE,
 Idioma TEXT
-)
+);
 -- Tabla actividad
 CREATE TABLE IF NOT EXISTS actividad(
 Id_actividad INT PRIMARY KEY AUTO_INCREMENT,
@@ -18,8 +19,8 @@ Sponsor VARCHAR(200)
 -- Tabla encuesta
 CREATE TABLE IF NOT EXISTS Encuesta(
 Id_encuesta INT PRIMARY KEY auto_increment,
-Mail VARCHAR(100),
-Idioma VARCHAR(45)
+Nombre_Encuesta VARCHAR(75),
+Descripcion text
 );
 -- Tabla invitado
 CREATE TABLE IF NOT EXISTS Invitado(

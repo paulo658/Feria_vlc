@@ -4,63 +4,47 @@ $Host.UI.RawUI.WindowTitle = "Gestor de Correos Feria VLC"
 
 # Obtener la ruta del script
 $scriptPath = Split-Path -Parent $MyInvocation.MyCommand.Path
-$venvPath = Join-Path $scriptPath "Scripts\activate.ps1"
 
 # Función para convertir MJML a HTML
-function Convert-MjmlToHtml {
-    param (
-        [string]$mjmlFile,
-        [string]$htmlFile
-    )
+function Convertir-MjmlAHtml {
     
-    try {
-        Write-Host "🔄 Convirtiendo $mjmlFile a HTML..." -ForegroundColor Yellow
-        mjml $mjmlFile -o $htmlFile
-        if ($LASTEXITCODE -eq 0) {
-            Write-Host "✅ Conversión exitosa: $htmlFile" -ForegroundColor Green
-            return $true
-        }
-        else {
-            Write-Host "❌ Error en la conversión de MJML" -ForegroundColor Red
-            return $false
-        }
+    $CarpetaMjml = "../mjml/"
+    $CarpetaHtml = "../html/"
+
+    # comprobación de carpeta de destino (../html/)
+    if (-not (Test-Path $CarpetaHtml)) {
+        New-Item -ItemType Directory -Path $CarpetaHtml | Out-Null
     }
-    catch {
-        Write-Host "❌ Error: $_" -ForegroundColor Red
-        return $false
+
+    # se listan los .mjml
+    Get-ChildItem -Path $CarpetaMjml -Filter *.mjml | ForEach-Object {
+        $ArchivoMjml = $_.FullName
+        $ArchivoMjmlSinExt = [System.IO.Path]::GetFileNameWithoutExtension($_.Name)
+        $ArchivoHtml = Join-Path $CarpetaHtml "$ArchivoMjmlSinExt.html"
+
+        # Verificar si necesitamos convertir el archivo
+        $NecesitaConversion = $true
+        if (Test-Path $ArchivoHtml) {
+            $FechaMjml = (Get-Item $ArchivoMjml).LastWriteTime
+            $FechaHtml = (Get-Item $ArchivoHtml).LastWriteTime
+            if ($FechaMjml -le $FechaHtml) {
+                $NecesitaConversion = $false
+                Write-Host "El archivo $($_.Name) ya está actualizado" -ForegroundColor Green
+            }
+        }
+
+        # se convierte el archivo a .html solo si es necesario
+        if ($NecesitaConversion) {
+            Write-Host "Convirtiendo $($_.Name) a HTML..." -ForegroundColor Cyan
+            mjml $ArchivoMjml -o $ArchivoHtml
+        }
     }
 }
 
 # Función para verificar y convertir archivos si es necesario
 function Verify-AndConvertFiles {
-    $mjmlPath = Join-Path $scriptPath "..\MJML"
-    $htmlPath = Join-Path $scriptPath "..\HTML"
-    
-    # Crear directorio HTML si no existe
-    if (-not (Test-Path $htmlPath)) {
-        New-Item -ItemType Directory -Path $htmlPath | Out-Null
-    }
-    
-    # Verificar cada supuesto
-    $supuestos = @("supuesto1.mjml", "supuesto2.mjml")
-    foreach ($supuesto in $supuestos) {
-        $mjmlFile = Join-Path $mjmlPath $supuesto
-        $htmlFile = Join-Path $htmlPath ($supuesto -replace "\.mjml$", ".html")
-        
-        # Si el archivo HTML no existe o es más antiguo que el MJML
-        if (-not (Test-Path $htmlFile) -or 
-            (Test-Path $mjmlFile -and (Get-Item $mjmlFile).LastWriteTime -gt (Get-Item $htmlFile).LastWriteTime)) {
-            if (Test-Path $mjmlFile) {
-                if (-not (Convert-MjmlToHtml -mjmlFile $mjmlFile -htmlFile $htmlFile)) {
-                    Write-Host "⚠️ No se pudo convertir $supuesto" -ForegroundColor Yellow
-                    continue
-                }
-            }
-            else {
-                Write-Host "⚠️ No se encontró el archivo MJML: $supuesto" -ForegroundColor Yellow
-            }
-        }
-    }
+    # Ejecutar la conversión de archivos MJML
+    Convertir-MjmlAHtml
 }
 
 # Función para mostrar el menú con colores
@@ -87,30 +71,19 @@ function Invoke-PythonScript {
     
     try {
         $pythonPath = Join-Path $scriptPath $Script
+        Write-Host "`nEjecutando: python $Script $Arguments" -ForegroundColor Cyan
         $process = Start-Process python -ArgumentList "$pythonPath $Arguments" -NoNewWindow -Wait -PassThru
         if ($process.ExitCode -ne 0) {
-            Write-Host "❌ Error ejecutando el script Python" -ForegroundColor Red
+            Write-Host "❌ El script Python terminó con errores (código: $($process.ExitCode))" -ForegroundColor Red
+            Write-Host "Presiona Enter para continuar..." -ForegroundColor Yellow
+            $null = Read-Host
         }
     }
     catch {
         Write-Host "❌ Error: $_" -ForegroundColor Red
+        Write-Host "Presiona Enter para continuar..." -ForegroundColor Yellow
+        $null = Read-Host
     }
-}
-
-# Activar entorno virtual
-try {
-    if (Test-Path $venvPath) {
-        . $venvPath
-        Write-Host "✅ Entorno virtual activado correctamente" -ForegroundColor Green
-    }
-    else {
-        Write-Host "❌ No se encontró el entorno virtual en: $venvPath" -ForegroundColor Red
-        exit 1
-    }
-}
-catch {
-    Write-Host "❌ Error activando el entorno virtual: $_" -ForegroundColor Red
-    exit 1
 }
 
 # Bucle principal del menú
@@ -140,7 +113,6 @@ while ($true) {
         }
         "5" {
             Write-Host "👋 ¡Hasta luego!" -ForegroundColor Green
-            deactivate
             exit 0
         }
         default {

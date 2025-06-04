@@ -6,93 +6,104 @@
       <mj-text color="#fff" font-size="18px" />
     </mj-attributes>
     <mj-style inline="inline">
-      .motogp-title { font-size: 28px; font-weight: bold; letter-spacing: 1px; }
-      .main-bg { background-color: #e53c3c; }
-      .shadow-img { border-radius: 12px; box-shadow: 4px 4px 16px 0 rgba(0,0,0,0.25); }
-      .shadow-box { box-shadow: 4px 4px 16px 0 rgba(0,0,0,0.18); border-radius: 12px; background: #e53c3c; padding: 16px; }
+      .motogp-title { 
+        font-size: 42px; 
+        font-weight: bold; 
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      }
+      .main-bg { 
+        background-color: #e53c3c; 
+      }
+      .shadow-img { 
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
+      .content-text {
+        font-size: 20px;
+        line-height: 1.5;
+      }
       @media only screen and (min-width:480px) {
         .text-left-desktop { text-align: left !important; }
         .text-right-desktop { text-align: right !important; }
       }
-      @media only screen and (max-width:480px) {
-        .text-left-desktop, .text-right-desktop { text-align: justify !important; }
-        .shadow-img { width: 90% !important; max-width: 260px !important; }
-      }
     </mj-style>
   </mj-head>
-  <mj-body background-color="#e53c3c">
+  <mj-body width="800px" background-color="#e53c3c">
     <!-- Banner superior -->
-    <mj-section background-color="#fff" padding="24px 0 16px 0" border-radius="16px" text-align="center">
-      <mj-column width="100%">
-        <mj-image src="./Imag/cabecera.jpg" alt="2Ruedas Banner" width="420px" padding="0" css-class="shadow-img" />
+    <mj-section background-color="#fff" padding="0">
+      <mj-column width="100%" padding="0">
+        <mj-image src="https://raw.githubusercontent.com/paulo658/Feria_vlc/refs/heads/main/Imagenes/2ruedas/cabecera.jpg" 
+                 alt="2Ruedas Banner" 
+                 width="800px" 
+                 padding="0" />
       </mj-column>
     </mj-section>
 
     <!-- Título sorteo -->
-    <mj-section css-class="main-bg" padding="32px 0 0 0">
+    <mj-section css-class="main-bg" padding="30px 0">
       <mj-column>
-        <mj-text align="center" css-class="motogp-title" padding-bottom="12px">
-          SORTEO ENTRADA MOTOGP !!
+        <mj-text align="center" css-class="motogp-title">
+          ¡¡ SORTEO ENTRADA MOTOGP !!
         </mj-text>
       </mj-column>
     </mj-section>
 
-    <!-- Primer bloque: imagen y texto -->
-    <mj-section
-      css-class="main-bg"
-      padding="12px 0 0 0"
-      background-repeat="no-repeat"
-      background-size="cover"
-    >
-      <mj-group>
-        <mj-column width="40%" vertical-align="middle">
-          <mj-image src="./Imag/motos.jpg" alt="MotoGP Cheste" />
-        </mj-column>
-        <mj-column width="60%" vertical-align="middle">
-          <mj-text css-class="text-left-desktop" font-size="18px" padding="12px 0 12px 0">
-            Sorteo de dos entradas para ver el GP de motociclismo en Cheste.
-          </mj-text>
-        </mj-column>
-      </mj-group>
+    <!-- Contenido principal -->
+    <mj-section padding="20px 0" background-color="#fff">
+      <mj-column width="50%" vertical-align="middle">
+        <mj-image src="https://raw.githubusercontent.com/paulo658/Feria_vlc/refs/heads/main/Imagenes/2ruedas/motos.jpg" 
+                 alt="MotoGP Cheste"
+                 css-class="shadow-img"
+                 padding="10px" />
+      </mj-column>
+      <mj-column width="50%" vertical-align="middle">
+        <mj-text color="#333" font-size="24px" padding="20px">
+          Sorteo de dos entradas para ver el GP de motociclismo en Cheste.
+        </mj-text>
+      </mj-column>
     </mj-section>
 
-    <!-- Segundo bloque: texto y imagen -->
-    <mj-section
-      css-class="main-bg"
-      padding="24px 0 0 0"
-      background-url="./Imag/fondo.png"
-      background-repeat="no-repeat"
-      background-size="cover"
-    >
-      <mj-group>
-        <mj-column width="60%" vertical-align="middle">
-          <mj-text css-class="text-right-desktop" font-size="18px" padding="12px 0 12px 0">
-            Entre todos los que complementen el formulario de las entradas de la feria antes del 1 de septiembre.
-          </mj-text>
-        </mj-column>
-        <mj-column width="40%" vertical-align="middle">
-          <mj-image src="./Imag/motogp.jpg" alt="MotoGP Carrera" />
-        </mj-column>
-      </mj-group>
+    <!-- Segunda sección -->
+    <mj-section padding="0" background-color="#f8f8f8">
+      <mj-column width="50%" vertical-align="middle">
+        <mj-text color="#333" font-size="24px" padding="20px">
+          Entre todos los que complementen el formulario de las entradas de la feria antes del 1 de septiembre.
+        </mj-text>
+      </mj-column>
+      <mj-column width="50%" vertical-align="middle">
+        <mj-image src="https://raw.githubusercontent.com/paulo658/Feria_vlc/refs/heads/main/Imagenes/2ruedas/motogp.jpg" 
+                 alt="MotoGP Carrera"
+                 css-class="shadow-img"
+                 padding="10px" />
+      </mj-column>
     </mj-section>
 
     <!-- Botón/entrada -->
-    <mj-section css-class="main-bg" padding="32px 0 0 0">
+    <mj-section css-class="main-bg" padding="40px 0">
       <mj-column>
-        <mj-button background-color="#fff" color="#e6323e" font-size="20px" font-weight="bold" border-radius="8px" padding="12px 32px" align="center">
-          Entrada 2Ruedas !!
+        <mj-button background-color="#fff" 
+                   color="#e6323e" 
+                   font-size="24px" 
+                   font-weight="bold" 
+                   border-radius="8px" 
+                   padding="20px 40px"
+                   width="400px">
+          ¡¡ Entrada 2Ruedas !!
         </mj-button>
       </mj-column>
     </mj-section>
 
     <!-- Redes sociales -->
-    <mj-section padding="32px 0 0 0">
+    <mj-section padding="30px 0" background-color="#333">
       <mj-column>
-        <mj-text align="center" font-size="18px" color="#fff" padding-bottom="12px">
+        <mj-text align="center" font-size="20px" padding-bottom="20px">
           Síguenos en nuestras redes sociales:
         </mj-text>
-        <mj-social align="center" color="#e6323e" icon-size="32px" mode="horizontal">
-          <mj-social-element name="facebook" href="https://www.facebook.com/2RuedasFeriaValencia" background-color="blue"></mj-social-element>
+        <mj-social align="center" 
+                   icon-size="40px" 
+                   mode="horizontal" 
+                   icon-padding="10px">
+          <mj-social-element name="facebook" href="https://www.facebook.com/2RuedasFeriaValencia" background-color="#1877f2"></mj-social-element>
           <mj-social-element name="instagram" href="https://www.instagram.com/2ruedasferiavalencia/" background-color="#E1306C"></mj-social-element>
           <mj-social-element name="x" href="https://x.com/feriavalencia" background-color="black"></mj-social-element>
         </mj-social>
