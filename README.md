@@ -1,137 +1,110 @@
-# Feria_vlc
-Todos los supuestos de las practicas de feria valencia
+# Feria_vlc - Informe Final del Proyecto
+Sistema de gestión de eventos para Feria Valencia
 
-# Supuesto 1
-Creación de un boletín informativo para Salón del Cómic de València, destacando noticias y promociones especiales.
+## 1. Objetivos del Proyecto
+- Desarrollar un sistema integral de gestión de eventos para Feria Valencia
+- Implementar un sistema de comunicación efectivo con los asistentes
+- Crear una plataforma de encuestas y feedback
+- Automatizar procesos de envío de boletines informativos
+- Facilitar la gestión de actividades y participantes
+- Asegurar la calidad mediante pruebas automatizadas
 
----
+## 2. Análisis y Público Objetivo
 
-# 1. Análisis de requerimientos: 
-El correo está dirigido a un público amplio, con edades comprendidas entre los 16 y 60 años, interesado en el mundo del cómic, manga, ilustración, cultura pop, cosplay y juegos de mesa y rol.
+### 2.1 Segmentación del Público
+- Rango de edad: 16-60 años
+- Intereses: cómic, manga, ilustración, cultura pop, cosplay, juegos de mesa y rol
+- Perfil: desde nuevos aficionados hasta seguidores consolidados
 
-Se trata de un segmento diverso que abarca desde nuevos aficionados hasta seguidores consolidados, por lo que el mensaje utiliza un tono entusiasta, cercano y adaptable para conectar con todas las franjas de edad, sin caer en excesos de informalidad.
-
-El objetivo principal de esta comunicación es incentivar la participación en una encuesta breve mediante la posibilidad de ganar entradas dobles para el Salón del Cómic de València 2026, promoviendo así la implicación del público y recogiendo información valiosa para mejorar la experiencia del evento.
-
-# · DAFO
+### 2.2 Análisis DAFO
 ![DAFO y competencia](./Imagenes/salon_comic/dafo.png)
 
----
-# 2. DISEÑO 
+## 3. Diseño y Justificación
 
-Aqui tenemos el primer diseño del correo.
+### 3.1 Arquitectura del Sistema
+El proyecto se estructura en varios componentes principales:
+- Sistema de gestión de base de datos (SQL)
+- Scripts de automatización (Python)
+- Plantillas de correo (MJML/HTML)
+- Interfaces de lanzamiento (PowerShell/Bash)
 
-# · Mockup
+### 3.2 Diseño Visual
+#### Boletín Informativo
 ![](./Imagenes/salon_comic/mockup.png)
 
-# · Elementos visuales utilizados
+#### Elementos de Diseño
+- **Encabezado**: Identidad visual del evento
+- **CTAs**: Botones verdes destacados
+- **Contenido**: Estructura clara y escaneable
+- **Imágenes**: Apoyo visual estratégico
+- **Footer**: Información legal y enlaces de contacto
 
-    Encabezado con imagen del evento:
+## 4. Solución Técnica
 
-Refuerza la identidad visual del Salón del Cómic (marca, fecha, lugar).
-
-Ilustración llamativa que conecta con la estética del cómic.
-
-    Botones destacados (CTA):
-
-Uso de botoneras verdes con texto en mayúsculas para captar atención inmediata.
-
-CTA inicial: "Consigue tu entrada aquí".
-
-CTA final: "Pulse para empezar la encuesta".
-
-Ambas llamadas a la acción están bien posicionadas (al inicio y al final), facilitando el clic rápido.
-
-    Bloque de texto informativo:
-
-Tono entusiasta y directo, pensado para ser comprendido rápidamente por lectores de cualquier edad.
-
-Uso de negritas y enlaces en azul para destacar puntos clave: actividades, nombres de artistas y experiencias.
-
-    Listado por puntos (bullet-like):
-
-Permite escaneo rápido del contenido, ideal para usuarios con poco tiempo.
-
-Divide las actividades en bloques temáticos reconocibles.
-
-    Imágenes intermedias (zona inferior):
-
-Refuerzan el aspecto emocional y visual del evento: comunidad, exposiciones, asistencia masiva.
-
-Sirven de apoyo visual sin distraer del CTA principal.
-
-    Footer (pie de página):
-
-Espacio reservado para información legal, redes sociales y enlace de baja, cumpliendo con los estándares de email marketing (RGPD/GDPR).
-
----
-# 3. BASE DE DATOS
-
-![](./Imagenes/salon_comic/E-R%20_SUPUESTO1.png)
-ENTIDADES (Tablas principales)
-1. 🧍‍♂️ Usuarios
-Clave primaria: COD_USUARIOS
-
-Atributos: Nombre, EDAD, MAIL (único), IDIOMA
-
-2. 📝 ENCUESTA
-Clave primaria: ID_ENCUESTA
-
-Atributos: NOMBRE_ENCUESTA, DESCRIPCION
-
-3. 🎯 ACTIVIDADES
-Clave primaria: ID_ACTIVIDAD
-
-Atributos: NOMBRE_ACTIVIDAD, FECHA_INICIO, FECHA_FIN, SPONSORS
-
-4. 👤 INVITADO
-Clave primaria: COD_INVITADOS
-
-Atributos: NOMBRE, APELLIDO, PAIS, DESCRIPCION
-
-🔁 RELACIONES (Tablas intermedias)
-5. 👔 SUBSCRITO
-Une: USUARIOS ↔ ACTIVIDADES
-
-Atributos: COD_USUARIOS, ID_ACTIVIDAD
-
-Tipo de relación: Muchos a muchos (n:n)
-
-6. ✅ HACEN
-Une: USER ↔ ENCUESTA
-
-Atributos: COD_USUARIOS, ID_ENCUESTA
-
-Tipo de relación: Muchos a muchos (n:n)
-
-7. 🎤 TRAEN
-Une: ACTIVIDADES ↔ INVITADO
-
-Atributos: ID_ACTIVIDAD, COD_INVITADO
-
-Tipo de relación: Muchos a muchos (n:n)
-
-🎓 DIAGRAMA E-R CONCEPTUAL (Descripción textual)
-Un USUARIO puede:
-
-Participar en muchas ACTIVIDADES (por SUBSCRITO)
-
-Contestar muchas ENCUESTAS (por HACEN)
-
-Una ENCUESTA puede:
-
-Ser contestada por varios Usuarios
-
-Una ACTIVIDAD puede:
-
-Tener muchos USUARIOS asignados (por Subscritos)
-
-Tener muchos INVITADO (por TRAEN)
-
-Un INVITADO puede:
-
-Participar en varias ACTIVIDADES
-
-# Diagrama base de datos
+### 4.1 Estructura de Base de Datos
 ![](./Imagenes/salon_comic/Diagrama.png)
+
+#### Entidades Principales
+1. **Usuarios**: Gestión de participantes
+2. **Encuesta**: Sistema de feedback
+3. **Actividades**: Eventos y programación
+4. **Invitados**: Gestión de ponentes/artistas
+
+### 4.2 Componentes del Sistema
+- **Correos.py**: Motor principal de envío de comunicaciones
+- **test_correos.py**: Suite de pruebas automatizadas
+- **Lanzador.ps1/sh**: Interfaces de control multiplataforma
+- **Plantillas MJML**: Diseños responsivos de correo
+
+## 5. Testing y Control de Calidad
+
+### 5.1 Pruebas Automatizadas
+- Test de creación de usuarios
+- Validación de suscripción a actividades
+- Verificación de creación de encuestas
+- Pruebas de transacciones de base de datos
+- Limpieza automática de datos de prueba
+
+### 5.2 Gestión de Errores
+- Sistema robusto de manejo de excepciones
+- Logging detallado de operaciones
+- Retroalimentación clara al usuario
+- Transacciones seguras en base de datos
+
+## 6. Integración con Redes y Sistemas
+
+### 6.1 Comunicaciones
+- Integración con servidores SMTP
+- Sistema de plantillas HTML responsivas
+- Conversión automática MJML a HTML
+- Gestión de listas de distribución
+
+### 6.2 Multiplataforma
+- Soporte para Windows y Linux
+- Scripts de lanzamiento adaptados
+- Gestión de dependencias automatizada
+- Compatibilidad con diferentes entornos
+
+## 7. Conclusiones y Mejoras Futuras
+
+### 7.1 Logros Alcanzados
+- Sistema robusto de gestión de eventos
+- Automatización efectiva de comunicaciones
+- Testing comprehensivo
+- Soporte multiplataforma
+
+### 7.2 Áreas de Mejora
+- Implementación de una interfaz web administrativa
+- Integración con más plataformas de redes sociales
+- Sistema de análisis de datos de encuestas
+- Automatización adicional de procesos
+- Expansión de la suite de pruebas
+- Mejoras en la personalización de comunicaciones
+
+### 7.3 Próximos Pasos
+- Desarrollo de API REST
+- Implementación de dashboard analítico
+- Integración con sistemas de ticketing
+- Mejoras en la seguridad y encriptación
+- Optimización del rendimiento de la base de datos
 

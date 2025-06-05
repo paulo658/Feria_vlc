@@ -163,7 +163,7 @@ while true; do
             ;;
         4)
             echo -e "${YELLOW}🧪 Ejecutando tests...${NC}"
-            invoke_python_script "test_correos.py" "-v"
+            invoke_python_script "test_correos.py" ""
             ;;
         5)
             echo -e "${GREEN}👋 ¡Hasta luego!${NC}"

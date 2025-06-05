@@ -109,7 +109,7 @@ while ($true) {
         }
         "4" {
             Write-Host "🧪 Ejecutando tests..." -ForegroundColor Yellow
-            Invoke-PythonScript -Script "test_correos.py" -Arguments "-v"
+            Invoke-PythonScript -Script "test_correos.py" -Arguments ""
         }
         "5" {
             Write-Host "👋 ¡Hasta luego!" -ForegroundColor Green
